@@ -5,8 +5,11 @@
 // iStockPhoto.com or gettyimages.com
 
 // key info
-$api_key = "";     # your API key
-$api_secret = "";  # your API secret
+// your API key
+$api_key = "";
+
+// your API secret
+$api_secret = "";
 
 // request options
 // search phrase
@@ -83,13 +86,11 @@ if ($err) {
 $search_response = json_decode($response, true);
 $images = $search_response["images"];
 
-// echo "<html><head></head><body>";
 for ($i = 0; $i < count($images); $i++) {
     $image = $images[$i];
     $uri = get_link($image["referral_destinations"], $site);
     echo "<a href=\"{$uri}\" target=\"_blank\"><img src=\"{$image["display_sizes"][0]["uri"]}\" alt=\"{$image["title"]}\"></a>";
 }
-// echo "</body></html>";
 
 function get_link($items, $site)
 {
