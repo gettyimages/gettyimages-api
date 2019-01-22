@@ -88,11 +88,11 @@ $images = $search_response["images"];
 
 for ($i = 0; $i < count($images); $i++) {
     $image = $images[$i];
-    $uri = get_link($image["referral_destinations"], $site);
+    $uri = get_referral_link($image["referral_destinations"], $site);
     echo "<a href=\"{$uri}\" target=\"_blank\"><img src=\"{$image["display_sizes"][0]["uri"]}\" alt=\"{$image["title"]}\"></a>";
 }
 
-function get_link($items, $site)
+function get_referral_link($items, $site)
 {
     for ($i=0; $i < count($items); $i++) {
         if ($items[$i]["site_name"] == $site) {
