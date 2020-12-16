@@ -23,7 +23,7 @@ namespace AuthCodeWebAppMVC.Controllers
         // unique auth code flow attempt.
         // See the PKCE RFC for specific information on this:
         // https://tools.ietf.org/html/rfc7636#section-4.1
-        private const string CodeVerifier = "e01e4868691b44b6aada8977fd94eaf0ffd59f23ba8";
+        private const string CodeVerifier = "xnQ42e5Ee-fb17_47ad-A57f-903A_487a-81f9-63e701f7290f";
 
         // The URL you'd use to receive the auth code.
         // URLs with "localhost" can be openly used for testing.
@@ -74,7 +74,7 @@ namespace AuthCodeWebAppMVC.Controllers
         {
             using (var sha = SHA256.Create())
             {
-                var bytes = Encoding.UTF8.GetBytes(CodeVerifier);
+                var bytes = Encoding.ASCII.GetBytes(CodeVerifier);
                 var hash = sha.ComputeHash(bytes);
                 return Base64UrlEncode(hash);
             }
