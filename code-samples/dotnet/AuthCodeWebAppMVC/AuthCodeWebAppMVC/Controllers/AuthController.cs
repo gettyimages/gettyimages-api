@@ -25,9 +25,6 @@ namespace AuthCodeWebAppMVC.Controllers
         // https://tools.ietf.org/html/rfc7636#section-4.1
         private const string CodeVerifier = "xnQ42e5Ee-fb17_47ad-A57f-903A_487a-81f9-63e701f7290f";
 
-        // The URL you'd use to receive the auth code.
-        // URLs with "localhost" can be openly used for testing.
-        // For production apps, you'll need to register the redirect URL with your Getty technical account manager.
         private const string RedirectUrl = Program.BaseUrl + "/Auth/Receiver";
 
         [HttpGet]
