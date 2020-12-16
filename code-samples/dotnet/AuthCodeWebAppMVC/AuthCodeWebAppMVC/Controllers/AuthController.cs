@@ -28,7 +28,7 @@ namespace AuthCodeWebAppMVC.Controllers
         // The URL you'd use to receive the auth code.
         // URLs with "localhost" can be openly used for testing.
         // For production apps, you'll need to register the redirect URL with your Getty technical account manager.
-        private const string RedirectUrl = "https://localhost:5001/Auth/Receiver";
+        private const string RedirectUrl = Program.BaseUrl + "/Auth/Receiver";
 
         [HttpGet]
         public IActionResult StartAuthCodeFlow()
