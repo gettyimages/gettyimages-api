@@ -7,7 +7,7 @@ Most of the code that illustrates how to work with authorization is in [`AuthCon
 ## Basic steps
 
 - Ensure you have a working ASP.NET 5 development environment on your machine
-- Fill in `Secrets:ApiKey` and `Secrets:ApiSecret` in [`AuthController`](AuthCodeWebAppMVC/appsettings.Development.json) with your Getty API key and secret
+- Fill in `Secrets:ApiKey` and `Secrets:ApiSecret` in [`appsettings.Development.json`](AuthCodeWebAppMVC/appsettings.Development.json) with your Getty API key and secret
 - Run the app
 - Click the "Start auth code authentication" link
 - Log in with a username and password when prompted
