@@ -12,7 +12,7 @@ Most of the code that illustrates how to work with authorization is in [`AuthCon
   - From Visual Studio or JetBrains Rider, load the solution and hit F5 or Ctrl-F5
   - From the CLI: `dotnet run --project code-samples/dotnet/AuthCodeWebAppMVC/AuthCodeWebAppMVC/AuthCodeWebAppMVC.csproj`
 - Go to [`http://localhost:5000`](http://localhost:5000)
-  - If you are already binding port 5000, modify `BaseUrl` in `Program.cs` to use an un-bound port
+  - You can modify `BaseUrl` in `Program.cs` if you need a different port
 - Click the "Start auth code authentication" link
 - Log in with a username and password when prompted
 - Observe the tokens are returned and displayed in a view in the app
