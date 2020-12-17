@@ -7,16 +7,22 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using AuthCodeWebAppMVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace AuthCodeWebAppMVC.Controllers
 {
     public class AuthController : Controller
     {
-        // TODO - API key.  In a production app you would pull this from a secured configuration, not hard-code it like this.
-        private const string ApiKey = "XXX";
+        private readonly IConfiguration _configuration;
 
-        // TODO - API secret.  In a production app you would pull this from a secured configuration, not hard-code it like this.
-        private const string ApiSecret = "XXX";
+        public AuthController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
+        private string ApiKey => _configuration["Secrets:ApiKey"];
+
+        private string ApiSecret => _configuration["Secrets:ApiSecret"];
         
         // We hard-code the code_verifier here only for a simple example.
         // A production app should be using newly-created values for each
