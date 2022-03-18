@@ -15,12 +15,21 @@ This project does not rely on _any_ third-party libraries or packages.
 ## Running locally
 
 After cloning this repository, the simplest way to test it out is by
-using [Docker](https://docs.docker.com/get-docker/).
+using [Docker](https://docs.docker.com/get-docker/). The following
+snippet assumes the presence of
+[make](https://www.gnu.org/software/make/) on your system.
 
 ```sh
 git clone https://github.com/gettyimages/gettyimages-api.git
 cd gettyimages-api/javascript/auth-code-client-side
 make
+```
+
+If you do not have make installed, you can start the Docker container
+with:
+
+```sh
+docker run -d -v $PWD:/usr/share/nginx/html --name nginx-authcode --rm -p 8080:80 nginx:mainline-alpine
 ```
 
 Once the nginx container starts up...
