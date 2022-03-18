@@ -19,7 +19,7 @@ using [Docker](https://docs.docker.com/get-docker/).
 
 ```sh
 git clone https://github.com/gettyimages/gettyimages-api.git
-cd javascript/auth-code-client-side
+cd gettyimages-api/javascript/auth-code-client-side
 make
 ```
 
