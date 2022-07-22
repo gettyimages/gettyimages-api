@@ -13,7 +13,7 @@ image_id = "95744047"
 
 def get_resource_owner_token(key, secret, user, passwd):
     """Get an access token using resource owner grant"""
-    url = "https://api.gettyimages.com/oauth2/token"
+    url = "https://api.gettyimages.com/v4/oauth2/token"
     payload = f"grant_type=password&client_id={key}&client_secret={secret}&username={user}&password={passwd}"
     headers = {'content-type': 'application/x-www-form-urlencoded'}
     response = requests.request("POST", url, data=payload, headers=headers)

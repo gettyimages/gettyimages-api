@@ -33,7 +33,7 @@ async function init() {
       const state = generateRandomString();
       sessionStorage.setItem("state", state);
       const link = document.getElementById("login");
-      const url = new URL(`${authServer}/oauth2/auth`);
+      const url = new URL(`${authServer}/v4/oauth2/auth`);
       const redirectUri = `${window.location.protocol}//${window.location.host}/get-token.html`;
       sessionStorage.setItem("redirect_uri", redirectUri)
       url.searchParams.set("client_id", localStorage.getItem("api_key"));

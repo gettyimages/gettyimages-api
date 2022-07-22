@@ -43,7 +43,7 @@ async function refreshAccessToken() {
     params.set("client_id", localStorage.getItem("api_key"));
     params.set("refresh_token", localStorage.getItem("refresh_token"));
     console.log(params.toString());
-    const response = await fetch(authServer + "/oauth2/token", {
+    const response = await fetch(authServer + "/v4/oauth2/token", {
         method: "POST",
         headers: {
             "content-type": "x-www-form-urlencoded",
@@ -62,7 +62,7 @@ async function exchangeCodeForToken(code) {
     params.set("code", code);
     params.set("code_verifier", sessionStorage.getItem("pkce_code_verifier"));
     console.log(params.toString());
-    const response = await fetch(authServer + "/oauth2/token", {
+    const response = await fetch(authServer + "/v4/oauth2/token", {
         method: "POST",
         headers: {
             "content-type": "x-www-form-urlencoded",
