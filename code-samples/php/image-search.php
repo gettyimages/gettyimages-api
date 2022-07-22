@@ -10,7 +10,7 @@ $phrase = "puppies and kittens";
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://api.gettyimages.com/oauth2/token",
+    CURLOPT_URL => "https://api.gettyimages.com/v4/oauth2/token",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,

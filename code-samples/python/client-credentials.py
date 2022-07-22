@@ -1,6 +1,6 @@
 import requests
 
-url = "https://api.gettyimages.com/oauth2/token"
+url = "https://api.gettyimages.com/v4/oauth2/token"
 api_key = "YOUR_API_KEY"
 api_secret = "YOUR_API_SECRET"
 
