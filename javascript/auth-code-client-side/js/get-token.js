@@ -46,7 +46,7 @@ async function refreshAccessToken() {
     const response = await fetch(authServer + "/v4/oauth2/token", {
         method: "POST",
         headers: {
-            "content-type": "x-www-form-urlencoded",
+            "content-type": "application/x-www-form-urlencoded",
         },
         body: params.toString()
     });
@@ -65,7 +65,7 @@ async function exchangeCodeForToken(code) {
     const response = await fetch(authServer + "/v4/oauth2/token", {
         method: "POST",
         headers: {
-            "content-type": "x-www-form-urlencoded",
+            "content-type": "application/x-www-form-urlencoded",
         },
         body: params.toString()
     });
