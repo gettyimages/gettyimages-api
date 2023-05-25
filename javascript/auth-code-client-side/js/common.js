@@ -1,4 +1,4 @@
-const authServer = "https://api.gettyimages.com";
+const authServer = "https://authentication.gettyimages.com";
 const apiServer = "https://api.gettyimages.com";
 
 function generateRandomString() {
