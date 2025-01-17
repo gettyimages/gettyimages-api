@@ -6,15 +6,13 @@ import re
 
 api_key = "YOUR_API_KEY"
 api_secret = "YOUR_API_SECRET"
-username = "YOUR_USERNAME"
-password = "YOUR_PASSWORD"
 image_id = "95744047"
 
 
-def get_resource_owner_token(key, secret, user, passwd):
-    """Get an access token using resource owner grant"""
-    url = "https://api.gettyimages.com/v4/oauth2/token"
-    payload = f"grant_type=password&client_id={key}&client_secret={secret}&username={user}&password={passwd}"
+def get_client_credentials_token(key, secret):
+    """Get an access token using client credentials grant"""
+    url = "https://authentication.gettyimages.com/oauth2/token"
+    payload = f"grant_type=client_credentials&client_id={key}&client_secret={secret}"
     headers = {'content-type': 'application/x-www-form-urlencoded'}
     response = requests.request("POST", url, data=payload, headers=headers)
     auth = json.loads(response.content)
@@ -45,7 +43,7 @@ def download_image(url):
     del response
     return filename
 
-auth = get_resource_owner_token(api_key, api_secret, username, password)
+auth = get_client_credentials_token(api_key, api_secret)
 auth["api_key"] = api_key
 download_response = get_download_url(image_id, auth)
 url = json.loads(download_response.content)["uri"]

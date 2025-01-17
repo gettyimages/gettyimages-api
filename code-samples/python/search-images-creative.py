@@ -19,7 +19,7 @@ def search_for_creative_images(phrase, orientations, number_of_people, oauth):
 
 def get_client_credentials_token(key, secret):
     """Get an access token using client credentials grant"""
-    url = "https://api.gettyimages.com/v4/oauth2/token"
+    url = "https://authentication.gettyimages.com/oauth2/token"
     payload = f"grant_type=client_credentials&client_id={key}&client_secret={secret}"
     headers = {"content-type": "application/x-www-form-urlencoded"}
     response = requests.request("POST", url, data=payload, headers=headers)

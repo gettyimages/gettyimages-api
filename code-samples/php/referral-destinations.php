@@ -6,10 +6,10 @@
 
 // key info
 // your API key
-$api_key = "";
+$api_key = "YOUR_API_KEY";
 
 // your API secret
-$api_secret = "";
+$api_secret = "YOUR_API_SECRET";
 
 // request options
 // search phrase
@@ -30,7 +30,7 @@ $fields = "id,title,thumb,referral_destinations";
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://api.gettyimages.com/v4/oauth2/token",
+    CURLOPT_URL => "https://authentication.gettyimages.com/oauth2/token",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
