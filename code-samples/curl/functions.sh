@@ -10,7 +10,7 @@ function assert-credentials {
         echo "******************************************************"
         echo "These examples require a file named credentials.sh"
         echo "The file should have environment variables with"
-        echo "your client_id, client_secret set."
+        echo "your client_id and client_secret set."
         echo "The file has been created for you, however you"
         echo "must set the values before continuing."
         echo "******************************************************"
