@@ -10,8 +10,8 @@ function assert-credentials {
         echo "******************************************************"
         echo "These examples require a file named credentials.sh"
         echo "The file should have environment variables with"
-        echo "your client_id, client_password, username and password"
-        echo "set. The file has been created for you, however you"
+        echo "your client_id and client_secret set."
+        echo "The file has been created for you, however you"
         echo "must set the values before continuing."
         echo "******************************************************"
         cat > credentials.sh <<EOF
@@ -21,10 +21,6 @@ function assert-credentials {
 export CLIENT_ID=''
 export CLIENT_SECRET=''
 
-# If you will use resource owner grant, these are required. Otherwise
-# they can be left unset
-export USERNAME=''
-export PASSWORD=''
 EOF
         chmod +x ./credentials.sh
         exit
@@ -64,22 +60,6 @@ function assert-curl {
     then
         echo "This script requires curl: https://curl.se/"
         echo "Ensure curl is installed and in your PATH"
-        exit
-    fi
-}
-
-function assert-user-credentials {
-    # Ensure credential values are set
-    source ./credentials.sh
-    if [[ -z $USERNAME ]]
-    then
-        echo 'USERNAME must be set'
-        exit
-    fi
-
-    if [[ -z $PASSWORD ]]
-    then
-        echo 'PASSWORD must be set'
         exit
     fi
 }

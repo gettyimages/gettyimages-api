@@ -38,7 +38,7 @@ namespace AuthCodeWebAppMVC.Controllers
         {
             string codeChallenge = GetCodeChallenge();
             string url =
-                $"https://api.gettyimages.com/v4/oauth2/auth?client_id={ApiKey}&response_type=code&state=datasentfromclient&redirect_uri={System.Net.WebUtility.UrlEncode(RedirectUrl)}&code_challenge={codeChallenge}&code_challenge_method=S256";
+                $"https://authentication.gettyimages.com/oauth2/auth?client_id={ApiKey}&response_type=code&state=datasentfromclient&redirect_uri={System.Net.WebUtility.UrlEncode(RedirectUrl)}&code_challenge={codeChallenge}&code_challenge_method=S256";
             return Redirect(url);
         }
 
@@ -58,7 +58,7 @@ namespace AuthCodeWebAppMVC.Controllers
                     new KeyValuePair<string, string>("code_verifier", CodeVerifier)
                 };
 
-                var req = new HttpRequestMessage(HttpMethod.Post, "https://api.gettyimages.com/v4/oauth2/token")
+                var req = new HttpRequestMessage(HttpMethod.Post, "https://authentication.gettyimages.com/oauth2/token")
                 {
                     Content = new FormUrlEncodedContent(formData)
                 };
